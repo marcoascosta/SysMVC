@@ -1,0 +1,38 @@
+# Sistema de arquivos local
+/vendor/
+node_modules/
+
+# Arquivos de ambiente
+.env
+*.env
+
+# Diretórios e arquivos de cache e log
+/storage/*
+/var/*
+/cache/*
+/logs/*
+*.log
+
+# Arquivos de compilação e temporários
+*.bak
+*.swp
+*.tmp
+*.~*
+
+# Arquivos específicos do IDE
+.vscode/
+.idea/
+
+# Dependências do Composer
+composer.lock
+
+# Outros arquivos temporários
+.DS_Store
+Thumbs.db
+
+# Arquivos gerados pelo sistema de migração de banco de dados (se houver)
+phinxlog/
+
+# Diretórios ou arquivos de banco de dados locais, como SQLite (se for o caso)
+*.sqlite
+*.db

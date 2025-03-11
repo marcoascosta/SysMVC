@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+use Symfony\Component\Console\Application;
+use App\Console\Command\GenerateApiKeysCommand;
+use App\Console\Command\GenerateAppKeyCommand;
+use App\Console\Command\MigrateCrudExampleCommand;
+
+require __DIR__.'/../vendor/autoload.php';
+
+$application = new Application();
+$application->add(new GenerateApiKeysCommand());
+$application->add(new GenerateAppKeyCommand());
+$application->add(new MigrateCrudExampleCommand());
+
+$application->run();
+

@@ -1,0 +1,48 @@
+{
+    "name": "sysmvc/sysmvc",
+    "description": "PHP Framework",
+    "version": "1.0.0",
+    "date": "2025-03-08",
+    "authors": [
+        {
+            "name": "Marco Costa",
+            "email": "marcocosta@gmx.us",
+            "role": "Developer"
+        }
+    ],
+    "license": "MIT",
+    "homepage": "https://sysmvc.duckdns.org",
+    "require": {
+        "illuminate/database": "^8.0",
+        "phpauth/phpauth": "^1.0",
+        "monolog/monolog": "^2.0",
+        "eftec/bladeone": "^4.0",
+        "symfony/console": "^5.0",
+        "robmorgan/phinx": "^0.12.0",
+        "defuse/php-encryption": "^2.2",
+        "paragonie/random_compat": "^9.99",
+        "rakit/validation": "^1.4",
+        "nesbot/carbon": "^2.0",
+        "league/flysystem": "^1.1",
+        "intervention/image": "^2.5",
+        "symfony/cache": "^5.0",
+        "predis/predis": "^1.1",
+        "php-di/php-di": "^7.0",
+        "symfony/dotenv": "^6.4",
+        "eftec/bladeonehtml": "^2.5",
+        "pecee/simple-router": "^5.4",
+        "nyholm/psr7": "^1.8",
+        "fakerphp/faker": "^1.24",
+        "symfony/mailer": "^7.2",
+        "delight-im/auth": "^8.3",
+        "twig/twig": "^3.20"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Symfony\\Component\\Dotenv\\": "vendor/symfony/dotenv/"
+        }
+    }
+}
