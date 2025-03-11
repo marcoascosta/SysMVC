@@ -7,6 +7,8 @@ Este software é oferecido de forma gratuita e pode ser utilizado, modificado e 
 
 Site do projeto: [https://sysmvc.duckdns.org](https://sysmvc.duckdns.org)
 
+Github: https://github.com/marcoascosta/SysMVC.git
+
 Se você deseja apoiar o desenvolvimento do SysMVC, considere fazer uma doação via PIX para **marcocosta@gmx.us**.
 
 ---
