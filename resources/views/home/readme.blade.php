@@ -5,6 +5,12 @@
 @section('content')
 <div class="container mt-5">
     <h1 class="display-4 text-primary">SysMVC</h1>
+
+    <br>
+
+    <p>Github: <a href="https://github.com/marcoascosta/SysMVC.git">https://github.com/marcoascosta/SysMVC.git</a></p>
+
+    <br><br>
     
     <p class="lead">Informações do Projeto</p>
     <p><strong>SysMVC</strong> é um sistema desenvolvido por <strong>Marco Costa</strong> (<a href="mailto:marcocosta@gmx.us">marcocosta@gmx.us</a>), com código-fonte licenciado sob a <strong>Licença MIT</strong>.</p>

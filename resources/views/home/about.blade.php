@@ -12,5 +12,6 @@
     <p><strong>Marco Costa</strong></p>
     <p>Desenvolvedor e Criador do SysMVC</p>
     <p><a href="mailto:marcocosta@gmx.us">marcocosta@gmx.us</a><p>
+    <p>Github: <a href="https://github.com/marcoascosta/SysMVC.git">https://github.com/marcoascosta/SysMVC.git</a></p>
 </div>
 @endsection
