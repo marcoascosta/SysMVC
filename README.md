@@ -5,7 +5,7 @@
 
 Este software é oferecido de forma gratuita e pode ser utilizado, modificado e distribuído conforme os termos da Licença MIT.
 
-Site do projeto: [https://sysmvc.duckdns.org](https://sysmvc.duckdns.org)
+Site do projeto: [https://sysmvc.syspanel.com.br](https://sysmvc.syspanel.com.br)
 
 Github: https://github.com/marcoascosta/SysMVC.git
 

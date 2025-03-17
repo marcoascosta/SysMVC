@@ -15,7 +15,7 @@
     <p class="lead">Informações do Projeto</p>
     <p><strong>SysMVC</strong> é um sistema desenvolvido por <strong>Marco Costa</strong> (<a href="mailto:marcocosta@gmx.us">marcocosta@gmx.us</a>), com código-fonte licenciado sob a <strong>Licença MIT</strong>.</p>
     <p>Este software é oferecido de forma gratuita e pode ser utilizado, modificado e distribuído conforme os termos da Licença MIT.</p>
-    <p>Site do projeto: <a href="https://sysmvc.duckdns.org">https://sysmvc.duckdns.org</a></p>
+    <p>Site do projeto: <a href="https://sysmvc.syspanel.com.br">https://sysmvc.syspanel.com.br</a></p>
     <p>Se você deseja apoiar o desenvolvimento do SysMVC, considere fazer uma doação via PIX para <strong>marcocosta@gmx.us</strong>.</p>
 
     <hr>
