@@ -6,7 +6,7 @@
  * PHP Framework.
  * 
  * @package    SysMVC
- * @author     Marco Costa (marcocosta@gmx.us)
+ * @author     Marco Costa (marcocosta@gmx.com)
  * @license    MIT
  * @since      2025-03-08
  * 

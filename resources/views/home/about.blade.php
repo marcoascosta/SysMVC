@@ -11,7 +11,8 @@
     <p>If you have any questions or need support, feel free to contact us. We are here to help!</p>
     <p><strong>Marco Costa</strong></p>
     <p>Developer and Creator of SysMVC</p>
-    <p><a href="mailto:marcocosta@gmx.us">marcocosta@gmx.us</a><p>
+    <p><a href="mailto:marcocosta@gmx.com">marcocosta@gmx.com</a><p>
     <p>Github: <a href="https://github.com/marcoascosta/SysMVC.git">https://github.com/marcoascosta/SysMVC.git</a></p>
+    <p>If you wish to support the development of SysMVC, consider making a donation via PAYPAL to <b>marcocosta@gmx.com</b></p>
 </div>
 @endsection

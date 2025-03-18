@@ -36,10 +36,10 @@ echo $blade->run("home.index", ["clients" => $clients]);
     <h2 class="mt-4">Contact</h2>
     <p>If you're interested in SysMVC, get in touch:</p>
     <ul>
-        <li>Email: <a href="mailto:marcocosta@gmx.us">marcocosta@gmx.us</a></li>
+        <li>Email: <a href="mailto:marcocosta@gmx.com">marcocosta@gmx.com</a></li>
         <li>WhatsApp: <a href="https://wa.me/5535992261684" target="_blank">+55 (35) 99226-1684</a></li>
     </ul>
 
-    <p>If you wish to support the development of SysMVC, consider making a donation via PIX to <b>marcocosta@gmx.us</b></p>
+    <p>If you wish to support the development of SysMVC, consider making a donation via PAYPAL to <b>marcocosta@gmx.com</b></p>
 </div>
 @endsection

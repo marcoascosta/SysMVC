@@ -36,12 +36,12 @@
 <h2 class="mt-4">Contact</h2>
 <p>If you're interested in SysMVC, feel free to contact us:</p>
 <ul>
-    <li>Email: <a href="mailto:marcocosta@gmx.us">marcocosta@gmx.us</a></li>
+    <li>Email: <a href="mailto:marcocosta@gmx.com">marcocosta@gmx.com</a></li>
     <li>WhatsApp: <a href="https://wa.me/5535992261684" target="_blank">+55 (35) 99226-1684</a></li>
 </ul>
 
 <br>
-<h2 class="mt-4">Donations via PIX</h2>
-<p>If you would like to support the development of SysMVC, please consider making a donation via PIX to <strong>marcocosta@gmx.us</strong>.</p>
+<h2 class="mt-4">Donations via PAYPAL</h2>
+<p>If you would like to support the development of SysMVC, please consider making a donation via PAYPAL to <strong>marcocosta@gmx.com</strong>.</p>
 @endsection
 

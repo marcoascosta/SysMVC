@@ -1,7 +1,7 @@
 # SysMVC
 
 ## 📌 Project Information
-**SysMVC** is a system developed by **Marco Costa** (**marcocosta@gmx.us**), with source code licensed under the **MIT License**.
+**SysMVC** is a system developed by **Marco Costa** (**marcocosta@gmx.com**), with source code licensed under the **MIT License**.
 
 This software is offered for free and can be used, modified, and distributed under the terms of the MIT License.
 
@@ -9,7 +9,7 @@ Project website: [https://sysmvc.duckdns.org](https://sysmvc.duckdns.org)
 
 Github: https://github.com/marcoascosta/SysMVC.git
 
-If you wish to support the development of SysMVC, consider making a donation via PIX to **marcocosta@gmx.us**.
+If you wish to support the development of SysMVC, consider making a donation via PAYPAL to **marcocosta@gmx.com**.
 
 ---
 
