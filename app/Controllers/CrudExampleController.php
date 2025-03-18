@@ -10,7 +10,6 @@ use App\Models\CrudExample;
 use App\Services\Sanitizer;
 use App\Services\BaseController;
 
-
 class CrudExampleController extends BaseController
 {
     protected $blade;
@@ -31,11 +30,11 @@ class CrudExampleController extends BaseController
     {
         try {
             $crudexample = CrudExample::all();
-            $this->logger->info('Exibindo a página do CrudExampleController.');
+            $this->logger->info('Displaying the CrudExampleController page.');
 
             if ($crudexample->isEmpty()) {
-                $this->logger->warning('Nenhum cadastro encontrado no banco de dados.');
-                return 'Nenhum cadastro encontrado no banco de dados.';
+                $this->logger->warning('No records found in the database.');
+                return 'No records found in the database.';
             }
 
             $crudexample = Sanitizer::sanitizeOutput($crudexample->toArray());
@@ -43,18 +42,18 @@ class CrudExampleController extends BaseController
             return $this->blade->run('crudexample.index', ['crudexample' => $crudexample]);
 
         } catch (\Exception $e) {
-            $this->logger->error('Erro ao consultar o banco de dados: ' . $e->getMessage());
-            return 'Erro ao consultar o banco de dados: ' . $e->getMessage();
+            $this->logger->error('Error when querying the database: ' . $e->getMessage());
+            return 'Error when querying the database: ' . $e->getMessage();
         }
     }
 
     public function edit(Request $request, $id): string
     {
         try {
-            $this->logger->info('Editando cadastro com ID: ' . $id);
+            $this->logger->info('Editing record with ID: ' . $id);
             $crudexample = CrudExample::find($id);
             if (!$crudexample) {
-                return 'Cadastro não encontrado';
+                return 'Record not found';
             }
 
             $csrfToken = generateCsrfToken();
@@ -62,8 +61,8 @@ class CrudExampleController extends BaseController
 
             return $this->blade->run('crudexample.edit', ['crudexample' => $crudexample, 'csrfToken' => $csrfToken]);
         } catch (\Exception $e) {
-            $this->logger->error('Erro ao exibir a página de edição: ' . $e->getMessage());
-            return 'Erro ao exibir a página de edição: ' . $e->getMessage();
+            $this->logger->error('Error when displaying the edit page: ' . $e->getMessage());
+            return 'Error when displaying the edit page: ' . $e->getMessage();
         }
     }
 
@@ -72,8 +71,8 @@ class CrudExampleController extends BaseController
         try {
             return $this->blade->run('crudexample.create', ['error' => null]);
         } catch (\Exception $e) {
-            $this->logger->error('Erro ao exibir a página de criação: ' . $e->getMessage());
-            return 'Erro ao exibir a página de criação: ' . $e->getMessage();
+            $this->logger->error('Error when displaying the create page: ' . $e->getMessage());
+            return 'Error when displaying the create page: ' . $e->getMessage();
         }
     }
 
@@ -83,13 +82,13 @@ class CrudExampleController extends BaseController
             $data = $_POST;
 
             if (!isset($data['csrf_token']) || !$this->validateCsrfToken($data['csrf_token'])) {
-                throw new \Exception('CSRF token inválido.');
+                throw new \Exception('Invalid CSRF token.');
             }
 
             $data = Sanitizer::sanitizeInput($data);
 
             if (!isset($data['password']) || empty($data['password'])) {
-                throw new \Exception('O campo "password" é obrigatório.');
+                throw new \Exception('The "password" field is required.');
             }
 
             $data['password'] = password_hash($data['password'], PASSWORD_BCRYPT);
@@ -99,12 +98,12 @@ class CrudExampleController extends BaseController
             header('Location: /crudexample');
             exit;
         } catch (\Exception $e) {
-            if ($e->getCode() == 23000) { // Código de erro para duplicata
-                $this->logger->error('Erro ao criar cadastro: Email duplicado.');
-                return $this->blade->run('crudexample.create', ['error' => 'Este email já existe.']);
+            if ($e->getCode() == 23000) { // Error code for duplicate
+                $this->logger->error('Error when creating record: Duplicate email.');
+                return $this->blade->run('crudexample.create', ['error' => 'This email already exists.']);
             } else {
-                $this->logger->error('Erro ao criar cadastro: ' . $e->getMessage());
-                echo 'Erro ao criar cadastro: ' . $e->getMessage();
+                $this->logger->error('Error when creating record: ' . $e->getMessage());
+                echo 'Error when creating record: ' . $e->getMessage();
             }
         }
     }
@@ -115,7 +114,7 @@ class CrudExampleController extends BaseController
             $data = $_POST;
 
             if (!isset($data['csrf_token']) || !$this->validateCsrfToken($data['csrf_token'])) {
-                throw new \Exception('CSRF token inválido.');
+                throw new \Exception('Invalid CSRF token.');
             }
 
             $data = Sanitizer::sanitizeInput($data);
@@ -134,8 +133,8 @@ class CrudExampleController extends BaseController
             header('Location: /crudexample');
             exit;
         } catch (\Exception $e) {
-            $this->logger->error('Erro ao atualizar cadastro: ' . $e->getMessage());
-            echo 'Erro ao atualizar cadastro: ' . $e->getMessage();
+            $this->logger->error('Error when updating record: ' . $e->getMessage());
+            echo 'Error when updating record: ' . $e->getMessage();
         }
     }
 
@@ -144,22 +143,22 @@ class CrudExampleController extends BaseController
         try {
             $crudexample = CrudExample::find($id);
             if (!$crudexample) {
-                return 'Cadastro não encontrado';
+                return 'Record not found';
             }
 
             $crudexample = Sanitizer::sanitizeOutput($crudexample->toArray());
 
             return $this->blade->run('crudexample.show', ['crudexample' => $crudexample]);
         } catch (\Exception $e) {
-            $this->logger->error('Erro ao exibir detalhes do cadastro: ' . $e->getMessage());
-            return 'Erro ao exibir detalhes do cadastro: ' . $e->getMessage();
+            $this->logger->error('Error when displaying record details: ' . $e->getMessage());
+            return 'Error when displaying record details: ' . $e->getMessage();
         }
     }
 
     public function delete(Request $request, $id)
     {
         try {
-            $this->logger->info('Deletando cadastro com ID: ' . $id);
+            $this->logger->info('Deleting record with ID: ' . $id);
             $crudexample = CrudExample::find($id);
             if ($crudexample) {
                 $crudexample->delete();
@@ -168,8 +167,8 @@ class CrudExampleController extends BaseController
             header('Location: /crudexample');
             exit;
         } catch (\Exception $e) {
-            $this->logger->error('Erro ao deletar cadastro: ' . $e->getMessage());
-            echo 'Erro ao deletar cadastro: ' . $e->getMessage();
+            $this->logger->error('Error when deleting record: ' . $e->getMessage());
+            echo 'Error when deleting record: ' . $e->getMessage();
         }
     }
 }

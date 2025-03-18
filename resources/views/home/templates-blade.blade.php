@@ -1,30 +1,30 @@
 @extends('layout')
 
-@section('title', 'Vantagens do SysMVC - Blade, Twig e PHP Puro')
+@section('title', 'SysMVC Advantages - Blade, Twig, and Pure PHP')
 
 @section('content')
 <div class="container">
-    <h2>SysMVC: Suporte para Blade, Twig e PHP Puro</h2>
-    <p>O SysMVC é um framework PHP versátil que oferece suporte para três formas de renderização de templates: <strong>Blade</strong>, <strong>Twig</strong> e <strong>PHP Puro</strong>. Essa flexibilidade permite que desenvolvedores escolham a ferramenta que melhor se adapta às suas necessidades, proporcionando uma série de vantagens.</p>
+    <h2>SysMVC: Support for Blade, Twig, and Pure PHP</h2>
+    <p>SysMVC is a versatile PHP framework that supports three template rendering methods: <strong>Blade</strong>, <strong>Twig</strong>, and <strong>Pure PHP</strong>. This flexibility allows developers to choose the tool that best suits their needs, providing several advantages.</p>
 
-    <h3>Vantagens do Blade</h3>
-    <p>Blade é uma engine de template simples e poderosa, desenvolvida para o framework Laravel. Com Blade, os desenvolvedores podem criar layouts reutilizáveis e componentes dinâmicos com facilidade. Ele é conhecido por sua sintaxe limpa e clara, que torna o desenvolvimento de templates rápido e intuitivo.</p>
-    <p>Para mais informações, consulte a <a href="https://laravel.com/docs/8.x/blade" target="_blank">documentação oficial do Blade</a>.</p>
+    <h3>Blade Advantages</h3>
+    <p>Blade is a simple yet powerful template engine developed for the Laravel framework. With Blade, developers can easily create reusable layouts and dynamic components. It is known for its clean and clear syntax, making template development fast and intuitive.</p>
+    <p>For more information, refer to the <a href="https://laravel.com/docs/8.x/blade" target="_blank">official Blade documentation</a>.</p>
 
-    <h3>Vantagens do Twig</h3>
-    <p>Twig é uma engine de template flexível e robusta, amplamente utilizada em diversos frameworks PHP. Ele oferece uma série de funcionalidades avançadas, como herança de templates, filtros, extensões personalizadas e muito mais. Twig é conhecido por sua segurança e desempenho, tornando-o uma escolha confiável para projetos de qualquer escala.</p>
-    <p>Para mais informações, consulte a <a href="https://twig.symfony.com/doc/3.x/" target="_blank">documentação oficial do Twig</a>.</p>
+    <h3>Twig Advantages</h3>
+    <p>Twig is a flexible and robust template engine, widely used in various PHP frameworks. It offers a series of advanced features such as template inheritance, filters, custom extensions, and more. Twig is known for its security and performance, making it a reliable choice for projects of any scale.</p>
+    <p>For more information, refer to the <a href="https://twig.symfony.com/doc/3.x/" target="_blank">official Twig documentation</a>.</p>
 
-    <h3>Vantagens do PHP Puro</h3>
-    <p>O SysMVC também oferece suporte para renderização de templates utilizando apenas PHP puro. Isso significa que você pode incluir diretamente arquivos PHP e renderizar o conteúdo dinamicamente. Se preferir não usar uma engine de template, pode simplesmente utilizar o comando <code>include</code> para incluir arquivos de template e gerar o conteúdo desejado, o que pode ser uma escolha mais simples e direta para projetos menores ou para desenvolvedores mais familiarizados com PHP.</p>
-    <p>Exemplo de uso do PHP puro no SysMVC:</p>
-    <pre><code>include('página.php');</code></pre>
+    <h3>Pure PHP Advantages</h3>
+    <p>SysMVC also supports template rendering using pure PHP. This means you can directly include PHP files and render content dynamically. If you prefer not to use a template engine, you can simply use the <code>include</code> command to include template files and generate the desired content. This can be a simpler and more straightforward choice for smaller projects or developers more familiar with PHP.</p>
+    <p>Example of using pure PHP in SysMVC:</p>
+    <pre><code>include('page.php');</code></pre>
 
-    <h3>Por que escolher o SysMVC?</h3>
-    <p>Com o SysMVC, você não precisa se preocupar em escolher entre Blade, Twig ou PHP Puro. Você pode utilizar qualquer uma das opções, ou até mesmo combinar diferentes abordagens no mesmo projeto, dependendo do contexto. Essa flexibilidade é uma grande vantagem, pois permite que desenvolvedores aproveitem o melhor de cada ferramenta, adaptando-se às suas preferências e requisitos específicos.</p>
+    <h3>Why Choose SysMVC?</h3>
+    <p>With SysMVC, you don't have to worry about choosing between Blade, Twig, or Pure PHP. You can use any of these options, or even combine different approaches within the same project, depending on the context. This flexibility is a significant advantage, as it allows developers to take the best of each tool, adapting to their preferences and specific requirements.</p>
 
-    <h3>Conclusão</h3>
-    <p>Seja você um entusiasta do Blade, um fã do Twig ou alguém que prefira PHP puro, o SysMVC está preparado para atender às suas necessidades. A capacidade de alternar entre essas opções torna o SysMVC uma escolha excepcional para desenvolvedores que buscam eficiência, flexibilidade e facilidade de uso em seus projetos PHP.</p>
+    <h3>Conclusion</h3>
+    <p>Whether you're a Blade enthusiast, a Twig fan, or someone who prefers pure PHP, SysMVC is ready to meet your needs. The ability to switch between these options makes SysMVC an excellent choice for developers seeking efficiency, flexibility, and ease of use in their PHP projects.</p>
 </div>
 
 <br><br>
@@ -33,15 +33,15 @@
 
 <br><br>
 
-<h2 class="mt-4">Contato</h2>
-<p>Se você estiver interessado no SysMVC, entre em contato:</p>
+<h2 class="mt-4">Contact</h2>
+<p>If you're interested in SysMVC, feel free to contact us:</p>
 <ul>
     <li>Email: <a href="mailto:marcocosta@gmx.us">marcocosta@gmx.us</a></li>
     <li>WhatsApp: <a href="https://wa.me/5535992261684" target="_blank">+55 (35) 99226-1684</a></li>
 </ul>
 
 <br>
-<h2 class="mt-4">Doações via PIX</h2>
-<p>Se você deseja apoiar o desenvolvimento do SysMVC, considere fazer uma doação via PIX para <strong>marcocosta@gmx.us</strong>.</p>
+<h2 class="mt-4">Donations via PIX</h2>
+<p>If you would like to support the development of SysMVC, please consider making a donation via PIX to <strong>marcocosta@gmx.us</strong>.</p>
 @endsection
 

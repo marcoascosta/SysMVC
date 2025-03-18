@@ -1,29 +1,29 @@
 @extends('layout')
 
-@section('title', 'Injeção de Dependência com PHP-DI')
+@section('title', 'Dependency Injection with PHP-DI')
 
 @section('content')
 <div class="container mt-5">
-    <h1 class="display-4 text-primary">Injeção de Dependência com PHP-DI</h1>
-    <p class="lead">Como utilizar o PHP-DI no SysMVC.</p>
+    <h1 class="display-4 text-primary">Dependency Injection with PHP-DI</h1>
+    <p class="lead">How to use PHP-DI in SysMVC.</p>
     
-    <p>O SysMVC utiliza a biblioteca PHP-DI para gerenciar a injeção de dependências. Isso permite que você escreva código mais modular e testável.</p>
+    <p>SysMVC uses the PHP-DI library to manage dependency injection. This allows you to write more modular and testable code.</p>
     
-    <h2>Configuração Básica</h2>
-    <p>Para configurar o PHP-DI, você pode criar um arquivo <code>di-config.php</code> com as definições das suas dependências:</p>
+    <h2>Basic Configuration</h2>
+    <p>To configure PHP-DI, you can create a <code>di-config.php</code> file with the definitions of your dependencies:</p>
     <pre><code>{{ 
 '   use DI\ContainerBuilder;
 
     return function (ContainerBuilder $containerBuilder) {
         $containerBuilder->addDefinitions([
-            // Defina suas dependências aqui
+            // Define your dependencies here
             ClientRepository::class => \DI\create(MySqlClientRepository::class),
         ]);
     };' 
 }}</code></pre>
 
-    <h2>Utilização</h2>
-    <p>Para utilizar a injeção de dependências em suas classes, basta passar as dependências pelo construtor:</p>
+    <h2>Usage</h2>
+    <p>To use dependency injection in your classes, simply pass the dependencies through the constructor:</p>
     <pre><code>{{ 
 '   class ClientService {
         private $clientRepository;
@@ -38,7 +38,7 @@
     }' 
 }}</code></pre>
     
-    <p>Com a injeção de dependências, você pode facilmente trocar implementações e manter seu código desacoplado e mais fácil de testar.</p>
+    <p>With dependency injection, you can easily swap implementations and keep your code decoupled and more testable.</p>
 
     <br><br>
 
@@ -46,14 +46,15 @@
 
     <br><br>
 
-    <h2 class="mt-4">Contato</h2>
-    <p>Se você estiver interessado no SysMVC, entre em contato:</p>
+    <h2 class="mt-4">Contact</h2>
+    <p>If you're interested in SysMVC, get in touch:</p>
     <ul>
         <li>Email: <a href="mailto:marcocosta@gmx.us">marcocosta@gmx.us</a></li>
         <li>WhatsApp: <a href="https://wa.me/5535992261684" target="_blank">+55 (35) 99226-1684</a></li>
     </ul>
 
-    <p>Se você deseja apoiar o desenvolvimento do SysMVC, considere fazer uma doação via PIX para <b>marcocosta@gmx.us</b></p>
+    <p>If you'd like to support the development of SysMVC, consider making a donation via PIX to <b>marcocosta@gmx.us</b></p>
 </div>
 @endsection
+
 

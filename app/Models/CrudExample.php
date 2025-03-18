@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CrudExample extends Model
 {
-    protected $table = 'crudexample'; // Nome da tabela no banco
+    protected $table = 'crudexample'; // Table name in the database
 
     protected $fillable = [
         'name',
@@ -22,7 +22,6 @@ class CrudExample extends Model
         'password',
     ];
 
-    // Desativar timestamps se não houver colunas created_at e updated_at
+    // Disable timestamps if there are no created_at and updated_at columns
     public $timestamps = false;
 }
-

@@ -6,13 +6,8 @@
 <div class="container mt-5">
     <h1 class="display-4 text-primary">Twig - Edit Crud Example</h1>
     <form action="/twigexample/update/{{ twigexample.id }}" method="POST">
-    
-
-
+        <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
         
-    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
-       
-
         <div class="mb-3">
             <label for="name" class="form-label">Name:</label>
             <input type="text" id="name" name="name" class="form-control" value="{{ twigexample.name }}" required>

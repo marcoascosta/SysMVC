@@ -35,7 +35,7 @@
 
         <div class="mb-3">
             <label for="phone" class="form-label">Phone:</label>
-            <input type="tel" id="phone" name="phone" class="form-control" required pattern="[0-9+\-\s]+" title="Digite um número de telefone válido">
+            <input type="tel" id="phone" name="phone" class="form-control" required pattern="[0-9+\-\s]+" title="Please enter a valid phone number">
         </div>
 
         <div class="mb-3">
@@ -47,3 +47,4 @@
     </form>
 </div>
 {% endblock %}
+

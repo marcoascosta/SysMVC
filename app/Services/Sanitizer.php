@@ -27,7 +27,7 @@ class Sanitizer
         if (is_array($value)) {
             return static::sanitizeInput($value);
         } elseif (is_null($value)) {
-            return ''; // Garante que null não passe adiante
+            return ''; // Ensures null does not pass through
         } elseif (filter_var($value, FILTER_VALIDATE_EMAIL)) {
             return filter_var($value, FILTER_SANITIZE_EMAIL);
         } elseif (filter_var($value, FILTER_VALIDATE_URL)) {

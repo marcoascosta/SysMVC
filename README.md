@@ -1,107 +1,96 @@
 # SysMVC
 
-## 📌 Informações do Projeto
-**SysMVC** é um sistema desenvolvido por **Marco Costa** (**marcocosta@gmx.us**), com código-fonte licenciado sob a **Licença MIT**.
+## 📌 Project Information
+**SysMVC** is a system developed by **Marco Costa** (**marcocosta@gmx.us**), with source code licensed under the **MIT License**.
 
-Este software é oferecido de forma gratuita e pode ser utilizado, modificado e distribuído conforme os termos da Licença MIT.
+This software is offered for free and can be used, modified, and distributed under the terms of the MIT License.
 
-Site do projeto: [https://sysmvc.syspanel.com.br](https://sysmvc.syspanel.com.br)
+Project website: [https://sysmvc.syspanel.com.br](https://sysmvc.syspanel.com.br)
 
 Github: https://github.com/marcoascosta/SysMVC.git
 
-Se você deseja apoiar o desenvolvimento do SysMVC, considere fazer uma doação via PIX para **marcocosta@gmx.us**.
+If you wish to support the development of SysMVC, consider making a donation via PIX to **marcocosta@gmx.us**.
 
 ---
 
-## 🚀 Tutorial de Instalação
+## 🚀 Installation Tutorial
 
-### ✅ Pré-requisitos
-- **PHP 7.4** ou superior
-- **Composer** (gerenciador de dependências para PHP)
-- **Servidor Web** (Apache ou Nginx)
-- **MySQL** ou outro banco de dados compatível
+### ✅ Prerequisites
+- **PHP 7.4** or higher
+- **Composer** (dependency manager for PHP)
+- **Web Server** (Apache or Nginx)
+- **MySQL** or another compatible database
 
-### 🔧 Passo a Passo
+### 🔧 Step-by-Step Guide
 
-#### 1️⃣ Descompacte o Arquivo
-Baixe e descompacte o arquivo do SysMVC para o seu ambiente local:
+#### 1️⃣ Unzip the File
+Download and unzip the SysMVC file to your local environment:
 
 ```sh
 unzip sysmvc.zip -d sysmvc
 cd sysmvc
-```
 
-#### 2️⃣ Instale as Dependências
-Use o Composer para instalar as dependências do projeto:
+2️⃣ Install Dependencies
 
-```sh
+Use Composer to install the project dependencies:
+
 composer install
-```
 
-#### 3️⃣ Configure o Ambiente
-Copie o arquivo `.env.example` para `.env` e configure suas variáveis de ambiente:
+3️⃣ Configure the Environment
 
-```sh
+Copy the .env.example file to .env and configure your environment variables:
+
 cp .env.example .env
-```
 
-Abra o arquivo `.env` e edite as seguintes linhas com suas informações:
+Open the .env file and edit the following lines with your information:
 
-```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=seu_banco_de_dados
-DB_USERNAME=seu_usuario
-DB_PASSWORD=sua_senha
-```
+DB_DATABASE=your_database_name
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
 
-#### 4️⃣ Ajuste as Permissões
-Altere as permissões dos diretórios de armazenamento e cache para garantir que o servidor web possa gravar neles:
+4️⃣ Set Permissions
 
-```sh
+Change the permissions for the storage and cache directories to ensure the web server can write to them:
+
 chmod -R 775 storage
 chmod -R 775 bootstrap/cache
-```
 
-#### 5️⃣ Gere a Chave da Aplicação
+5️⃣ Generate the Application Key
 
-```sh
 php bin/console generate:app-key
-```
 
-#### 6️⃣ Execute as Migrações
-Execute as migrações para criar as tabelas no banco de dados:
+6️⃣ Run Migrations
 
-```sh
+Run the migrations to create the tables in the database:
+
 php bin/console migrate
-```
 
-#### 7️⃣ Configure o Servidor Web
+7️⃣ Configure the Web Server
+📌 Apache
 
-##### 📌 Apache
-Adicione a seguinte configuração ao seu arquivo de configuração do Apache:
+Add the following configuration to your Apache configuration file:
 
-```apache
 <VirtualHost *:80>
     ServerName sysmvc.local
-    DocumentRoot /caminho/para/sysmvc/public
+    DocumentRoot /path/to/sysmvc/public
 
-    <Directory /caminho/para/sysmvc/public>
+    <Directory /path/to/sysmvc/public>
         AllowOverride All
         Require all granted
     </Directory>
 </VirtualHost>
-```
 
-##### 📌 Nginx
-Adicione a seguinte configuração ao seu arquivo de configuração do Nginx:
+📌 Nginx
 
-```nginx
+Add the following configuration to your Nginx configuration file:
+
 server {
     listen 80;
     server_name sysmvc.local;
-    root /caminho/para/sysmvc/public;
+    root /path/to/sysmvc/public;
 
     index index.php index.html index.htm;
 
@@ -114,51 +103,42 @@ server {
         fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
     }
 }
-```
 
----
+📦 Dependencies Used
 
-## 📦 Dependências Utilizadas
-O projeto utiliza os seguintes pacotes de terceiros, cada um com sua respectiva licença:
+The project uses the following third-party packages, each with its respective license:
+✅ Packages with MIT License
 
+    Illuminate Database → illuminate/database
+    Monolog → monolog/monolog
+    BladeOne → eftec/bladeone
+    Twig → twig/twig
+    Symfony Console → symfony/console
+    Phinx → robmorgan/phinx
+    Defuse Encryption → defuse/php-encryption
+    Random Compatibility → paragonie/random_compat
+    Rakit Validation → rakit/validation
+    Carbon → nesbot/carbon
+    Flysystem → league/flysystem
+    Intervention Image → intervention/image
+    Symfony Cache → symfony/cache
+    Predis Redis Client → predis/predis
+    PHP Dependency Injection → php-di/php-di
+    Symfony Dotenv → symfony/dotenv
+    BladeOne HTML → eftec/bladeonehtml
+    Pecee SimpleRouter → pecee/simple-router
+    Nyholm PSR7 → nyholm/psr7
+    FakerPHP Faker → fakerphp/faker
+    Symfony Mailer → symfony/mailer
 
-### ✅ Pacotes com Licença MIT
-1. **Illuminate Database** → [`illuminate/database`](https://github.com/illuminate/database)
-2. **Monolog** → [`monolog/monolog`](https://github.com/Seldaek/monolog)
-3. **BladeOne** → [`eftec/bladeone`](https://github.com/EFTEC/BladeOne)
-4. **Twig** → [`twig/twig`](https://github.com/twigphp/Twig)
-5. **Symfony Console** → [`symfony/console`](https://github.com/symfony/console)
-6. **Phinx** → [`robmorgan/phinx`](https://github.com/cakephp/phinx)
-7. **Defuse Encryption** → [`defuse/php-encryption`](https://github.com/defuse/php-encryption)
-8. **Random Compatibility** → [`paragonie/random_compat`](https://github.com/paragonie/random_compat)
-9. **Rakit Validation** → [`rakit/validation`](https://github.com/rakit/validation)
-10. **Carbon** → [`nesbot/carbon`](https://github.com/briannesbitt/Carbon)
-11. **Flysystem** → [`league/flysystem`](https://github.com/thephpleague/flysystem)
-12. **Intervention Image** → [`intervention/image`](https://github.com/Intervention/image)
-13. **Symfony Cache** → [`symfony/cache`](https://github.com/symfony/cache)
-14. **Predis Redis Client** → [`predis/predis`](https://github.com/predis/predis)
-15. **PHP Dependency Injection** → [`php-di/php-di`](https://github.com/PHP-DI/PHP-DI)
-16. **Symfony Dotenv** → [`symfony/dotenv`](https://github.com/symfony/dotenv)
-17. **BladeOne HTML** → [`eftec/bladeonehtml`](https://github.com/EFTEC/BladeOneHTML)
-18. **Pecee SimpleRouter** → [`pecee/simple-router`](https://github.com/pecee/pecee-simple-router)
-19. **Nyholm PSR7** → [`nyholm/psr7`](https://github.com/Nyholm/psr7)
-20. **FakerPHP Faker** → [`fakerphp/faker`](https://github.com/FakerPHP/Faker)
-21. **Symfony Mailer** → [`symfony/mailer`](https://github.com/symfony/mailer)
+📜 Terms of Use
 
+This project is licensed under the MIT License.
 
+You can use, copy, modify, merge, publish, distribute, sublicense, or sell copies of the Software, as long as the license and copyright notice are included in all copies or substantial portions of the Software.
 
----
+The Software is provided "as is", without warranties of any kind. For more details, see the MIT License.
 
-## 📜 Termos de Uso
-Este projeto está licenciado sob a **Licença MIT**.
+For more information, contact: marcocosta@gmx.us
 
-Você pode usar, copiar, modificar, fundir, publicar, distribuir, sublicenciar ou vender cópias do Software, desde que a licença e a nota de copyright sejam incluídas em todas as cópias ou partes substanciais do Software.
-
-O Software é fornecido "no estado em que se encontra", sem garantias de qualquer tipo. Para mais detalhes, consulte a [Licença MIT](LICENSE).
-
-Para mais informações, entre em contato: **marcocosta@gmx.us**
-
----
-
-© 2025 Marco Costa - Todos os direitos reservados sob a Licença MIT.
-
+© 2025 Marco Costa - All rights reserved under the MIT License.

@@ -1,38 +1,37 @@
 @extends('layout')
 
-@section('title', 'Saiba mais sobre o SysMVC')
+@section('title', 'Learn More About SysMVC')
 
 @section('content')
 <div class="container mt-5">
     
-    
-    <!-- Imagem gratuita -->
+    <!-- Free Image -->
     <img src="https://images.pexels.com/photos/3184424/pexels-photo-3184424.jpeg" class="img-fluid mb-4" alt="SysMVC">
 
     <br><br>
     <h1 class="display-8 text-primary">SysMVC - PHP Framework</h1>
     <br>
 
-    <p class="lead">Bem-vindo ao SysMVC - PHP Framework!</p>
-    <p>O SysMVC é um framework PHP desenvolvido para facilitar a criação de aplicações web robustas e escaláveis. Utilizamos as melhores práticas de desenvolvimento e ferramentas modernas para proporcionar uma experiência de desenvolvimento eficiente e agradável.</p>
-    <p>Nossa missão é ajudar desenvolvedores a construir aplicações web de alta qualidade de forma rápida e eficaz. Oferecemos uma estrutura sólida e flexível, permitindo que você se concentre no que realmente importa: criar funcionalidades incríveis para seus usuários.</p>
-    <p>SysMVC possui curva de aprendizagem e uso super rápida, é leve, rápido, moderno, descomplicado, seguro e por isso torna-se ideal para desenvolvimento de websites e apps locais e em nuvem, além de estar sob licença MIT, que é altamente permissiva para os Desenvolvedores.</p>
+    <p class="lead">Welcome to SysMVC - PHP Framework!</p>
+    <p>SysMVC is a PHP framework developed to facilitate the creation of robust and scalable web applications. We use best development practices and modern tools to provide an efficient and pleasant development experience.</p>
+    <p>Our mission is to help developers build high-quality web applications quickly and efficiently. We offer a solid and flexible framework, allowing you to focus on what really matters: creating amazing features for your users.</p>
+    <p>SysMVC has a fast learning curve, it's lightweight, fast, modern, straightforward, secure, and ideal for developing websites and apps both locally and in the cloud. It is also licensed under the MIT License, which is highly permissive for developers.</p>
 
-    <h2 class="mt-4">Principais Características</h2>
+    <h2 class="mt-4">Main Features</h2>
     <ul>
-        <li>Sistema de rotas avançado para fácil navegação</li>
-        <li>Suporte a templates Blade para uma renderização eficiente</li>
-        <li>Integração com Monolog para um sistema de logging robusto</li>
-        <li>Estrutura modular e fácil de manter</li>
-        <li>Suporte a banco de dados ORM para uma interação simplificada com o banco de dados</li>
-        <li>Segurança aprimorada com proteção contra CSRF, XSS e outras</li>        
-        <li>Injeção de dependência</li>
-        <li>Carregamento de variáveis de ambiente</li>
-        <li>Manipulação de requisições e respostas HTTP</li>
+        <li>Advanced routing system for easy navigation</li>
+        <li>Support for Blade templates for efficient rendering</li>
+        <li>Integration with Monolog for a robust logging system</li>
+        <li>Modular and easy-to-maintain structure</li>
+        <li>ORM database support for simplified interaction with the database</li>
+        <li>Enhanced security with protection against CSRF, XSS, and more</li>        
+        <li>Dependency injection</li>
+        <li>Environment variable loading</li>
+        <li>Handling of HTTP requests and responses</li>
     </ul>
     <br>
-    <h2 class="mt-4">Licença MIT</h2>
-    <p>O SysMVC é licenciado sob a licença MIT, que permite uma ampla liberdade de uso e distribuição. Aqui está o texto completo da licença:</p>
+    <h2 class="mt-4">MIT License</h2>
+    <p>SysMVC is licensed under the MIT License, which allows wide freedom of use and distribution. Here is the full text of the license:</p>
     <br>
     <pre class="bg-light p-3">
 MIT License
@@ -64,16 +63,16 @@ SOFTWARE.
 
     <br><br>
 
-    <h2 class="mt-4">Contato</h2>
-    <p>Se você estiver interessado no SysMVC, entre em contato:</p>
+    <h2 class="mt-4">Contact</h2>
+    <p>If you're interested in SysMVC, get in touch:</p>
     <ul>
         <li>Email: <a href="mailto:marcocosta@gmx.us">marcocosta@gmx.us</a></li>
         <li>WhatsApp: <a href="https://wa.me/5535992261684" target="_blank">+55 (35) 99226-1684</a></li>
     </ul>
 
     <br>
-    <h2 class="mt-4">Doações via PIX</h2>
-    <p>Se você deseja apoiar o desenvolvimento do SysMVC, considere fazer uma doação via PIX para <strong>marcocosta@gmx.us</strong>.</p>
+    <h2 class="mt-4">Donations via PIX</h2>
+    <p>If you'd like to support the development of SysMVC, consider making a donation via PIX to <strong>marcocosta@gmx.us</strong>.</p>
 
 </div>
 @endsection

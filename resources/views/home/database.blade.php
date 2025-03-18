@@ -1,26 +1,26 @@
 @extends('layout')
 
-@section('title', 'Uso de Banco de Dados')
+@section('title', 'Database Usage')
 
 @section('content')
 <div class="container mt-5">
-    <h1 class="display-4 text-primary">Uso de Banco de Dados</h1>
-    <p class="lead">Exemplo de CRUD com SysMVC.</p>
+    <h1 class="display-4 text-primary">Database Usage</h1>
+    <p class="lead">CRUD Example with SysMVC.</p>
     
-    <p>O SysMVC facilita a interação com bancos de dados através do uso do Eloquent ORM. Você pode facilmente criar, ler, atualizar e deletar registros no banco de dados usando métodos intuitivos.</p>
+    <p>SysMVC makes it easy to interact with databases through the use of Eloquent ORM. You can easily create, read, update, and delete records in the database using intuitive methods.</p>
     
-    <h2>Exemplo de CRUD</h2>
-    <p>Abaixo está um exemplo básico de operações CRUD:</p>
+    <h2>CRUD Example</h2>
+    <p>Below is a basic example of CRUD operations:</p>
     
-    <h3>Criação de um Registro</h3>
+    <h3>Creating a Record</h3>
     <pre><code>
 $client = new Client();
-$client->name = 'Nome do Cliente';
-$client->email = 'email@exemplo.com';
+$client->name = 'Client Name';
+$client->email = 'email@example.com';
 $client->save();
     </code></pre>
     
-    <h3>Leitura de Registros</h3>
+    <h3>Reading Records</h3>
     <pre><code>
 $clients = Client::all();
 foreach ($clients as $client) {
@@ -28,34 +28,34 @@ foreach ($clients as $client) {
 }
     </code></pre>
     
-    <h3>Atualização de um Registro</h3>
+    <h3>Updating a Record</h3>
     <pre><code>
 $client = Client::find(1);
-$client->name = 'Novo Nome';
+$client->name = 'New Name';
 $client->save();
     </code></pre>
     
-    <h3>Exclusão de um Registro</h3>
+    <h3>Deleting a Record</h3>
     <pre><code>
 $client = Client::find(1);
 $client->delete();
     </code></pre>
     
-    <p>Com esses exemplos, você pode ver como é fácil trabalhar com bancos de dados usando o SysMVC.</p>
+    <p>With these examples, you can see how easy it is to work with databases using SysMVC.</p>
     <br><br>
 
     <p>Github: <a href="https://github.com/marcoascosta/SysMVC.git">https://github.com/marcoascosta/SysMVC.git</a></p>
 
     <br><br>
 
-<h2 class="mt-4">Contato</h2>
-<p>Se você estiver interessado no SysMVC, entre em contato:</p>
+<h2 class="mt-4">Contact</h2>
+<p>If you're interested in SysMVC, get in touch:</p>
 <ul>
     <li>Email: <a href="mailto:marcocosta@gmx.us">marcocosta@gmx.us</a></li>
     <li>WhatsApp: <a href="https://wa.me/5535992261684" target="_blank">+55 (35) 99226-1684</a></li>
 </ul>
 
-<p>Se você deseja apoiar o desenvolvimento do SysMVC, considere fazer uma doação via PIX para <b>marcocosta@gmx.us</b></p>
+<p>If you'd like to support the development of SysMVC, consider making a donation via PIX to <b>marcocosta@gmx.us</b></p>
 
 </div>
 @endsection

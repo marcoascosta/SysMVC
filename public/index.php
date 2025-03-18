@@ -18,12 +18,10 @@
 use Symfony\Component\Dotenv\Dotenv;
 use Pecee\SimpleRouter\SimpleRouter as Router;
 
-// Carregar o autoloader do Composer
+// Load Composer's autoloader
 require __DIR__ . '/../vendor/autoload.php';
 
-
-
-// Carregar o arquivo .env para variáveis de ambiente
+// Load the .env file into environment variables
 $dotenv = new Dotenv();
 if (file_exists(__DIR__ . '/../.env')) {
     $dotenv->load(__DIR__ . '/../.env');
@@ -31,13 +29,13 @@ if (file_exists(__DIR__ . '/../.env')) {
     throw new \Exception('.env file not found');
 }
 
-// Função para obter variáveis de ambiente com verificação
+// Function to get environment variables with a fallback default
 function getEnvOrDefault($name, $default = null) {
     $value = getenv($name);
     return $value !== false ? $value : $default;
 }
 
-// Configurações para o PHP
+// PHP settings configuration
 ini_set('memory_limit', getEnvOrDefault('PHP_MEMORY_LIMIT', '128M'));
 ini_set('max_execution_time', getEnvOrDefault('PHP_MAX_EXECUTION_TIME', '30'));
 ini_set('max_input_time', getEnvOrDefault('PHP_MAX_INPUT_TIME', '60'));
@@ -50,12 +48,10 @@ ini_set('log_errors', getEnvOrDefault('PHP_LOG_ERRORS', '1'));
 ini_set('error_log', getEnvOrDefault('PHP_ERROR_LOG', '/var/log/php_errors.log'));
 error_reporting(constant(getEnvOrDefault('PHP_ERROR_REPORTING', 'E_ALL')));
 
-
-
-// Ativar exibição de erros em desenvolvimento
+// Enable error display in development
 ini_set('display_errors', 1);
 
 require __DIR__ . '/../bootstrap/app.php';
 
-// Iniciar o roteamento
+// Start routing
 Router::start();

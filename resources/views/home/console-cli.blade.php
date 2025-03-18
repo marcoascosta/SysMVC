@@ -5,18 +5,18 @@
 @section('content')
     <div class="container">
         <h2>Console CLI</h2>
-        <p>O console CLI do SysMVC, baseado no Symfony Console, permite que você gerencie seu projeto de forma eficiente usando comandos de linha de comando.</p>
+        <p>The SysMVC CLI console, based on Symfony Console, allows you to efficiently manage your project using command-line commands.</p>
         
-        <h3>Comandos Úteis</h3>
+        <h3>Useful Commands</h3>
         <ul>
-            <li><strong>php bin/console generate:app-key</strong> - Gera uma nova chave de aplicação.</li>
-            <li><strong>php bin/console make:controller NomeController</strong> - Cria um novo controlador.</li>
-            <li><strong>php bin/console make:model NomeModel</strong> - Cria um novo modelo.</li>
-            <li><strong>php bin/console migrate: Nome da Tabela do Banco de Dados</strong> - Executa as migrações do banco de dados.</li>
+            <li><strong>php bin/console generate:app-key</strong> - Generates a new application key.</li>
+            <li><strong>php bin/console make:controller ControllerName</strong> - Creates a new controller.</li>
+            <li><strong>php bin/console make:model ModelName</strong> - Creates a new model.</li>
+            <li><strong>php bin/console migrate: DatabaseTableName</strong> - Runs database migrations.</li>
         </ul>
 
-        <h3>Expansão com Mais Comandos</h3>
-        <p>O Symfony Console permite que você crie e expanda comandos personalizados. Aqui está um exemplo de como criar um comando personalizado:</p>
+        <h3>Extending with More Commands</h3>
+        <p>The Symfony Console allows you to create and extend custom commands. Here is an example of how to create a custom command:</p>
         <pre>
             <code>
                 // src/Command/SayHelloCommand.php
@@ -46,7 +46,7 @@
             </code>
         </pre>
 
-        <p>Para registrar o comando, adicione-o ao serviço no arquivo <code>config/services.yaml</code>:</p>
+        <p>To register the command, add it to the service in the <code>config/services.yaml</code> file:</p>
         <pre>
             <code>
                 # config/services.yaml
@@ -56,14 +56,14 @@
             </code>
         </pre>
 
-        <p>Com isso, você pode executar o comando personalizado:</p>
+        <p>Now you can execute the custom command:</p>
         <pre>
             <code>
                 $ php bin/console app:say-hello
             </code>
         </pre>
         
-        <p>Para mais informações sobre os comandos disponíveis e como criar comandos personalizados, consulte a <a href="https://symfony.com/doc/current/console.html" target="_blank">documentação do Symfony Console</a>.</p>
+        <p>For more information about available commands and how to create custom commands, check the <a href="https://symfony.com/doc/current/console.html" target="_blank">Symfony Console documentation</a>.</p>
     </div>
 
 
@@ -73,18 +73,14 @@
 
     <br><br>
 
-    <h2 class="mt-4">Contato</h2>
-    <p>Se você estiver interessado no SysMVC, entre em contato:</p>
+    <h2 class="mt-4">Contact</h2>
+    <p>If you're interested in SysMVC, get in touch:</p>
     <ul>
         <li>Email: <a href="mailto:marcocosta@gmx.us">marcocosta@gmx.us</a></li>
         <li>WhatsApp: <a href="https://wa.me/5535992261684" target="_blank">+55 (35) 99226-1684</a></li>
     </ul>
 
     <br>
-    <h2 class="mt-4">Doações via PIX</h2>
-    <p>Se você deseja apoiar o desenvolvimento do SysMVC, considere fazer uma doação via PIX para <strong>marcocosta@gmx.us</strong>.</p>
-
-
-
+    <h2 class="mt-4">Donations via PIX</h2>
+    <p>If you'd like to support the development of SysMVC, consider making a donation via PIX to <strong>marcocosta@gmx.us</strong>.</p>
 @endsection
-

@@ -15,12 +15,12 @@ class MigrateCrudExampleCommand extends Command
 
     protected function configure()
     {
-        $this->setDescription('Migra o banco de dados criando a tabela crudexample e adicionando registros falsos para teste.');
+        $this->setDescription('Migrates the database by creating the crudexample table and adding fake records for testing.');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        // Carregar as variáveis do .env
+        // Load the variables from the .env file
         $dotenv = new Dotenv();
         $dotenv->load(__DIR__ . '/../../../.env');
 
@@ -37,19 +37,19 @@ class MigrateCrudExampleCommand extends Command
             'prefix'    => '',
         ]);
 
-        // Seta o Capsule como gerenciador global de Eloquent ORM
+        // Set Capsule as the global Eloquent ORM manager
         $capsule->setAsGlobal();
 
-        // Inicia o Eloquent ORM
+        // Boot Eloquent ORM
         $capsule->bootEloquent();
 
-        // Verificar se a tabela crudexample já existe
+        // Check if the crudexample table already exists
         if (Capsule::schema()->hasTable('crudexample')) {
-            $output->writeln('A tabela "crudexample" já existe. Nenhuma ação necessária.');
+            $output->writeln('The "crudexample" table already exists. No action needed.');
             return Command::SUCCESS;
         }
 
-        // Criar a tabela crudexample
+        // Create the crudexample table
         $capsule->schema()->create('crudexample', function ($table) {
             $table->increments('id');
             $table->string('company', 50);
@@ -62,13 +62,13 @@ class MigrateCrudExampleCommand extends Command
             $table->timestamps();
         });
 
-        // Gerar 100 registros falsos
+        // Generate 30 fake records
         $faker = Faker::create();
         for ($i = 0; $i < 30; $i++) {
             Capsule::table('crudexample')->insert([
                 'company' => $faker->company,
                 'name' => $faker->name,
-                'password' => password_hash('password', PASSWORD_BCRYPT), // Senha padrão para testes
+                'password' => password_hash('password', PASSWORD_BCRYPT), // Default password for testing
                 'email' => $faker->unique()->safeEmail,
                 'address' => $faker->address,
                 'phone' => $faker->phoneNumber,
@@ -78,7 +78,7 @@ class MigrateCrudExampleCommand extends Command
             ]);
         }
 
-        $output->writeln('Migração da tabela "crudexample" e inserção de registros fakes para exemplo concluídas com sucesso.');
+        $output->writeln('Migration of the "crudexample" table and insertion of fake records for example completed successfully.');
 
         return Command::SUCCESS;
     }

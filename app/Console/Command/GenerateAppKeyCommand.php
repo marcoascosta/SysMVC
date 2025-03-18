@@ -13,41 +13,41 @@ class GenerateAppKeyCommand extends Command
 
     protected function configure()
     {
-        $this->setDescription('Gera uma chave de aplicação e grava no arquivo .env');
+        $this->setDescription('Generates an application key and writes it to the .env file');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        // Gerar chave aleatória
-        $appKey = bin2hex(random_bytes(32));  // Gera uma chave de 64 caracteres (32 bytes)
+        // Generate random key
+        $appKey = bin2hex(random_bytes(32));  // Generates a 64-character key (32 bytes)
         
-        // Output para o terminal
-        $output->writeln("Chave gerada: $appKey");
+        // Output to terminal
+        $output->writeln("Generated Key: $appKey");
 
-        // Carregar o .env
+        // Load the .env
         $dotenv = new Dotenv();
-        $envFilePath = __DIR__ . '/../../../.env';  // Ajuste o caminho conforme necessário
+        $envFilePath = __DIR__ . '/../../../.env';  // Adjust the path as needed
         if (!file_exists($envFilePath)) {
-            $output->writeln("Arquivo .env não encontrado!");
+            $output->writeln(".env file not found!");
             return Command::FAILURE;
         }
 
-        // Lê o conteúdo do arquivo .env
+        // Read the content of the .env file
         $envFile = file_get_contents($envFilePath);
         
-        // Substitui a chave APP_KEY ou adiciona se não existir
+        // Replace the APP_KEY or add it if it doesn't exist
         if (strpos($envFile, 'APP_KEY=') !== false) {
-            // Se já existir uma linha com APP_KEY, substitui
+            // If a line with APP_KEY already exists, replace it
             $envFile = preg_replace('/^APP_KEY=.*$/m', "APP_KEY=$appKey", $envFile);
         } else {
-            // Caso contrário, adiciona no final
+            // Otherwise, add it at the end
             $envFile .= "\nAPP_KEY=$appKey\n";
         }
 
-        // Grava o novo conteúdo no arquivo .env
+        // Write the new content to the .env file
         file_put_contents($envFilePath, $envFile);
 
-        $output->writeln("A chave de aplicação foi gravada no arquivo .env");
+        $output->writeln("The application key has been written to the .env file");
 
         return Command::SUCCESS;
     }

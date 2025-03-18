@@ -7,7 +7,7 @@
     <h1 class="text-warning">Blade - Crud Example Edit</h1>
     <form action="/crudexample/update/{{ $crudexample['id'] }}" method="POST">
         <?= csrf() ?>
-        <input type="hidden" name="_method" value="POST"> <!-- Alterado para POST -->
+        <input type="hidden" name="_method" value="POST"> <!-- Changed to POST -->
         <div class="mb-3">
             <label for="name" class="form-label">Name:</label>
             <input type="text" id="name" name="name" class="form-control" value="{{ $crudexample['name'] }}" required>

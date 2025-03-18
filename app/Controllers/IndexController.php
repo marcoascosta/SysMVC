@@ -11,13 +11,13 @@ class IndexController extends BaseController
 
     public function __construct()
     {
-        // Configurar BladeOne
+        // Configure BladeOne
         $this->blade = new BladeOne(VIEWS_PATH, CACHE_PATH, BladeOne::MODE_DEBUG);
     }
 
     public function index()
     {
-        // Passar dados para a view e renderizar
+        // Pass data to the view and render
         return $this->blade->run('home', ['title' => 'Welcome to SysMVC2025!']);
     }
 }

@@ -3,7 +3,7 @@
 use Carbon\Carbon;
 
 /**
- * Formata uma data utilizando Carbon.
+ * Formats a date using Carbon.
  *
  * @param string $date
  * @param string $format
@@ -14,7 +14,7 @@ function carbonFormatDate(string $date, string $format = 'Y-m-d H:i:s'): string 
 }
 
 /**
- * Calcula a diferença entre duas datas utilizando Carbon.
+ * Calculates the difference between two dates using Carbon.
  *
  * @param string $startDate
  * @param string $endDate
@@ -26,29 +26,23 @@ function carbonDateDifference(string $startDate, string $endDate): string {
     return $start->diffForHumans($end);
 }
 
-
-
 /**
- * Gera a URL completa para um ativo (asset) no seu projeto.
+ * Generates the full URL for an asset in your project.
  *
- * @param string $path Caminho relativo do ativo.
- * @return string URL completa do ativo.
+ * @param string $path The relative path of the asset.
+ * @return string The full URL of the asset.
  */
 function asset($path)
 {
-    // Obter a URL base do aplicativo a partir das constantes definidas
+    // Get the base URL of the application from the defined constants
     $baseUrl = rtrim(APP_URL, '/');
 
-    // Combinar a URL base com o caminho do ativo
+    // Combine the base URL with the asset path
     return $baseUrl . '/' . ltrim($path, '/');
 }
 
-
-
-
-
 /**
- * Converte um valor monetário para centavos.
+ * Converts a monetary value to cents.
  *
  * @param float $amount
  * @return int
@@ -58,7 +52,7 @@ function toCents(float $amount): int {
 }
 
 /**
- * Converte um valor monetário de centavos para reais.
+ * Converts a monetary value from cents to reais.
  *
  * @param int $cents
  * @return float
@@ -67,14 +61,8 @@ function fromCents(int $cents): float {
     return $cents / 100;
 }
 
-
-
-
-use League\Flysystem\Filesystem;
-use League\Flysystem\Adapter\Local;
-
 /**
- * Cria um sistema de arquivos Flysystem.
+ * Creates a Flysystem file system.
  *
  * @return Filesystem
  */
@@ -84,7 +72,7 @@ function createFilesystem(): Filesystem {
 }
 
 /**
- * Verifica se um arquivo existe no Flysystem.
+ * Checks if a file exists in Flysystem.
  *
  * @param string $filePath
  * @return bool
@@ -94,13 +82,8 @@ function flysystemFileExists(string $filePath): bool {
     return $filesystem->has($filePath);
 }
 
-
-
-
-use Intervention\Image\ImageManager;
-
 /**
- * Redimensiona uma imagem utilizando Intervention Image.
+ * Resizes an image using Intervention Image.
  *
  * @param string $filePath
  * @param int $width
@@ -114,14 +97,8 @@ function resizeImage(string $filePath, int $width, int $height): bool {
     return $image->save();
 }
 
-
-
-
-
-// Funções Helpers Gerais
-
 /**
- * Carrega uma view com o BladeOne.
+ * Loads a view with BladeOne.
  *
  * @param string $view
  * @param array $data
@@ -133,7 +110,7 @@ function view(string $view, array $data = []): string {
 }
 
 /**
- * Obtém a URL base.
+ * Gets the base URL.
  *
  * @param string $path
  * @return string
@@ -142,10 +119,8 @@ function baseUrl(string $path = ''): string {
     return 'http://localhost/' . trim($path, '/');
 }
 
-// Funções Helpers para Arrays
-
 /**
- * Verifica se um valor existe no array.
+ * Checks if a value exists in the array.
  *
  * @param array $array
  * @param string $key
@@ -156,7 +131,7 @@ function arrayHas(array $array, string $key): bool {
 }
 
 /**
- * Mescla arrays recursivamente.
+ * Merges arrays recursively.
  *
  * @param array $array1
  * @param array $array2
@@ -167,7 +142,7 @@ function arrayMergeRecursive(array $array1, array $array2): array {
 }
 
 /**
- * Obtém um valor de um array ou valor padrão.
+ * Gets a value from an array or returns a default value.
  *
  * @param array $array
  * @param string $key
@@ -194,10 +169,8 @@ function dataGet($array, $key, $default = null) {
     return $array;
 }
 
-// Funções Helpers para Strings
-
 /**
- * Converte uma string para camel case.
+ * Converts a string to camel case.
  *
  * @param string $string
  * @return string
@@ -209,7 +182,7 @@ function toCamelCase(string $string): string {
 }
 
 /**
- * Gera um slug a partir de uma string.
+ * Generates a slug from a string.
  *
  * @param string $string
  * @return string
@@ -220,7 +193,7 @@ function generateSlug(string $string): string {
 }
 
 /**
- * Converte uma string para snake case.
+ * Converts a string to snake case.
  *
  * @param string $string
  * @return string
@@ -230,7 +203,7 @@ function toSnakeCase(string $string): string {
 }
 
 /**
- * Gera uma string aleatória.
+ * Generates a random string.
  *
  * @param int $length
  * @return string
@@ -239,10 +212,8 @@ function randomString(int $length = 10): string {
     return substr(str_shuffle(str_repeat('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length / 62))), 1, $length);
 }
 
-// Funções Helpers para Datas
-
 /**
- * Obtém a data atual formatada.
+ * Gets the current date formatted.
  *
  * @param string $format
  * @return string
@@ -252,7 +223,7 @@ function currentDateFormatted(string $format = 'Y-m-d H:i:s'): string {
 }
 
 /**
- * Calcula a diferença entre duas datas.
+ * Calculates the difference between two dates.
  *
  * @param string $startDate
  * @param string $endDate
@@ -265,7 +236,7 @@ function dateDifference(string $startDate, string $endDate): int {
 }
 
 /**
- * Formata uma data.
+ * Formats a date.
  *
  * @param string $date
  * @param string $format
@@ -276,7 +247,7 @@ function formatDate(string $date, string $format = 'Y-m-d H:i:s'): string {
 }
 
 /**
- * Calcula a idade a partir de uma data de nascimento.
+ * Calculates the age from a birth date.
  *
  * @param string $birthDate
  * @return int
@@ -287,10 +258,8 @@ function calculateAge(string $birthDate): int {
     return $birthDate->diff($today)->y;
 }
 
-// Funções Helpers para Respostas HTTP
-
 /**
- * Redireciona para outra URL.
+ * Redirects to another URL.
  *
  * @param string $url
  */
@@ -300,7 +269,7 @@ function redirect(string $url) {
 }
 
 /**
- * Envia uma resposta JSON.
+ * Sends a JSON response.
  *
  * @param array $data
  * @param int $statusCode
@@ -312,10 +281,8 @@ function jsonResponse(array $data, int $statusCode = 200) {
     exit();
 }
 
-// Funções Helpers para Manipulação de Arquivos
-
 /**
- * Verifica se um arquivo existe.
+ * Checks if a file exists.
  *
  * @param string $filePath
  * @return bool
@@ -325,7 +292,7 @@ function fileExists(string $filePath): bool {
 }
 
 /**
- * Cria um diretório.
+ * Creates a directory.
  *
  * @param string $path
  * @param int $permissions
@@ -336,12 +303,8 @@ function createDirectory(string $path, int $permissions = 0755) {
     }
 }
 
-// Funções Helpers Adicionais (Semelhantes ao Laravel)
-
-
-
 /**
- * Verifica se a cadeia de caracteres termina com um dado sufixo.
+ * Checks if the string ends with a given suffix.
  *
  * @param string $haystack
  * @param string|array $needles
@@ -357,7 +320,7 @@ function strEndsWith($haystack, $needles) {
 }
 
 /**
- * Verifica se a cadeia de caracteres contém um dado valor.
+ * Checks if the string contains a given value.
  *
  * @param string $haystack
  * @param string|array $needles
@@ -373,7 +336,7 @@ function strContains($haystack, $needles) {
 }
 
 /**
- * Helper para debugar variáveis (Imprime de maneira legível e sai).
+ * Helper for debugging variables (prints in a readable manner and exits).
  *
  * @param mixed $var
  */
@@ -385,7 +348,7 @@ function dd($var) {
 }
 
 /**
- * Helper para imprimir variáveis de maneira legível.
+ * Helper for printing variables in a readable manner.
  *
  * @param mixed $var
  */
@@ -395,12 +358,8 @@ function dump($var) {
     echo '</pre>';
 }
 
-
-
-// Funções Helpers para Valores Monetários
-
 /**
- * Formata um valor monetário.
+ * Formats a monetary value.
  *
  * @param float $amount
  * @param string $currency
@@ -412,7 +371,7 @@ function formatCurrency(float $amount, string $currency = 'BRL'): string {
 }
 
 /**
- * Converte um valor monetário para centavos.
+ * Converts a monetary value to cents.
  *
  * @param float $amount
  * @return int
@@ -422,7 +381,7 @@ function toCents2(float $amount): int {
 }
 
 /**
- * Converte um valor monetário de centavos para reais.
+ * Converts a monetary value from cents to reais.
  *
  * @param int $cents
  * @return float
@@ -431,10 +390,8 @@ function fromCents2(int $cents): float {
     return $cents / 100;
 }
 
-// Funções Helpers Adicionais (Semelhantes ao Laravel)
-
 /**
- * Verifica se a cadeia de caracteres começa com um dado prefixo.
+ * Checks if the string starts with a given prefix.
  *
  * @param string $haystack
  * @param string|array $needles
@@ -449,7 +406,4 @@ function strStartsWith($haystack, $needles) {
     return false;
 }
 
-
-
 ?>
-

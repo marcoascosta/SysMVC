@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Informações do Projeto')
+@section('title', 'Project Information')
 
 @section('content')
 <div class="container mt-5">
@@ -12,75 +12,75 @@
 
     <br><br>
     
-    <p class="lead">Informações do Projeto</p>
-    <p><strong>SysMVC</strong> é um sistema desenvolvido por <strong>Marco Costa</strong> (<a href="mailto:marcocosta@gmx.us">marcocosta@gmx.us</a>), com código-fonte licenciado sob a <strong>Licença MIT</strong>.</p>
-    <p>Este software é oferecido de forma gratuita e pode ser utilizado, modificado e distribuído conforme os termos da Licença MIT.</p>
-    <p>Site do projeto: <a href="https://sysmvc.syspanel.com.br">https://sysmvc.syspanel.com.br</a></p>
-    <p>Se você deseja apoiar o desenvolvimento do SysMVC, considere fazer uma doação via PIX para <strong>marcocosta@gmx.us</strong>.</p>
+    <p class="lead">Project Information</p>
+    <p><strong>SysMVC</strong> is a system developed by <strong>Marco Costa</strong> (<a href="mailto:marcocosta@gmx.us">marcocosta@gmx.us</a>), with source code licensed under the <strong>MIT License</strong>.</p>
+    <p>This software is offered for free and can be used, modified, and distributed under the terms of the MIT License.</p>
+    <p>Project website: <a href="https://sysmvc.syspanel.com.br">https://sysmvc.syspanel.com.br</a></p>
+    <p>If you wish to support the development of SysMVC, consider making a donation via PIX to <strong>marcocosta@gmx.us</strong>.</p>
 
     <hr>
 
-    <h2 class="mt-4">🚀 Tutorial de Instalação</h2>
+    <h2 class="mt-4">🚀 Installation Tutorial</h2>
 
-    <h3>✅ Pré-requisitos</h3>
+    <h3>✅ Prerequisites</h3>
     <ul>
-        <li><strong>PHP 8.1</strong> ou superior</li>
-        <li><strong>Composer</strong> (gerenciador de dependências para PHP)</li>
-        <li><strong>Servidor Web</strong> (Apache ou Nginx)</li>
-        <li><strong>MySQL</strong> ou outro banco de dados compatível</li>
+        <li><strong>PHP 8.1</strong> or higher</li>
+        <li><strong>Composer</strong> (dependency manager for PHP)</li>
+        <li><strong>Web Server</strong> (Apache or Nginx)</li>
+        <li><strong>MySQL</strong> or other compatible database</li>
     </ul>
 
-    <h3>🔧 Passo a Passo</h3>
+    <h3>🔧 Step-by-Step</h3>
 
-    <h4>1️⃣ Descompacte o Arquivo</h4>
-    <p>Baixe e descompacte o arquivo do SysMVC para o seu ambiente local:</p>
+    <h4>1️⃣ Unzip the File</h4>
+    <p>Download and unzip the SysMVC file to your local environment:</p>
     <pre><code>unzip sysmvc.zip -d sysmvc
 cd sysmvc
     </code></pre>
 
-    <h4>2️⃣ Instale as Dependências</h4>
-    <p>Use o Composer para instalar as dependências do projeto:</p>
+    <h4>2️⃣ Install the Dependencies</h4>
+    <p>Use Composer to install the project dependencies:</p>
     <pre><code>composer install
     </code></pre>
 
-    <h4>3️⃣ Configure o Ambiente</h4>
-    <p>Copie o arquivo <code>.env.example</code> para <code>.env</code> e configure suas variáveis de ambiente:</p>
+    <h4>3️⃣ Configure the Environment</h4>
+    <p>Copy the <code>.env.example</code> file to <code>.env</code> and configure your environment variables:</p>
     <pre><code>cp .env.example .env
     </code></pre>
 
-    <p>Abra o arquivo <code>.env</code> e edite as seguintes linhas com suas informações:</p>
+    <p>Open the <code>.env</code> file and edit the following lines with your information:</p>
     <pre><code>DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=seu_banco_de_dados
-DB_USERNAME=seu_usuario
-DB_PASSWORD=sua_senha
+DB_DATABASE=your_database
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
     </code></pre>
 
-    <h4>4️⃣ Ajuste as Permissões</h4>
-    <p>Altere as permissões dos diretórios de armazenamento e cache para garantir que o servidor web possa gravar neles:</p>
+    <h4>4️⃣ Set Permissions</h4>
+    <p>Change the permissions of the storage and cache directories to ensure the web server can write to them:</p>
     <pre><code>chmod -R 775 storage
 chmod -R 775 bootstrap/cache
     </code></pre>
 
-    <h4>5️⃣ Gere a Chave da Aplicação</h4>
+    <h4>5️⃣ Generate the Application Key</h4>
     <pre><code>php bin/console generate:app-key
     </code></pre>
 
-    <h4>6️⃣ Execute as Migrações</h4>
-    <p>Execute as migrações para criar as tabelas no banco de dados:</p>
+    <h4>6️⃣ Run the Migrations</h4>
+    <p>Run the migrations to create the tables in the database:</p>
     <pre><code>php bin/console migrate:crudexample
     </code></pre>
 
-    <h4>7️⃣ Configure o Servidor Web</h4>
+    <h4>7️⃣ Configure the Web Server</h4>
 
     <h5>📌 Apache</h5>
-    <p>Adicione a seguinte configuração ao seu arquivo de configuração do Apache:</p>
+    <p>Add the following configuration to your Apache configuration file:</p>
     <pre><code>&lt;VirtualHost *:80&gt;
     ServerName sysmvc.local
-    DocumentRoot /caminho/para/sysmvc/public
+    DocumentRoot /path/to/sysmvc/public
 
-    &lt;Directory /caminho/para/sysmvc/public&gt;
+    &lt;Directory /path/to/sysmvc/public&gt;
         AllowOverride All
         Require all granted
     &lt;/Directory&gt;
@@ -88,11 +88,11 @@ chmod -R 775 bootstrap/cache
     </code></pre>
 
     <h5>📌 Nginx</h5>
-    <p>Adicione a seguinte configuração ao seu arquivo de configuração do Nginx:</p>
+    <p>Add the following configuration to your Nginx configuration file:</p>
     <pre><code>server {
     listen 80;
     server_name sysmvc.local;
-    root /caminho/para/sysmvc/public;
+    root /path/to/sysmvc/public;
 
     index index.php index.html index.htm;
 
@@ -109,10 +109,10 @@ chmod -R 775 bootstrap/cache
 
     <hr>
 
-    <h2 class="mt-4">📦 Dependências Utilizadas</h2>
-    <p>O projeto utiliza os seguintes pacotes de terceiros, cada um com sua respectiva licença:</p>
+    <h2 class="mt-4">📦 Dependencies Used</h2>
+    <p>The project uses the following third-party packages, each with its respective license:</p>
 
-    <h3>✅ Pacotes com Licença MIT</h3>
+    <h3>✅ Packages with MIT License</h3>
     <ul>
         <li><strong>Illuminate Database</strong> → <a href="https://github.com/illuminate/database">illuminate/database</a></li>
         <li><strong>Monolog</strong> → <a href="https://github.com/Seldaek/monolog">monolog/monolog</a></li>
@@ -138,13 +138,12 @@ chmod -R 775 bootstrap/cache
 
     <hr>
 
-    <h2 class="mt-4">📜 Termos de Uso</h2>
-    <p>Este projeto está licenciado sob a <strong>Licença MIT</strong>.</p>
-    <p>Você pode usar, copiar, modificar, fundir, publicar, distribuir, sublicenciar ou vender cópias do Software, desde que a licença e a nota de copyright sejam incluídas em todas as cópias ou partes substanciais do Software.</p>
-    <p>O Software é fornecido "no estado em que se encontra", sem garantias de qualquer tipo. Para mais detalhes, consulte a <a href="https://opensource.org/licenses/MIT">Licença MIT</a>.</p>
-    <p>Para mais informações, entre em contato: <a href="mailto:marcocosta@gmx.us">marcocosta@gmx.us</a></p>
+    <h2 class="mt-4">📜 Terms of Use</h2>
+    <p>This project is licensed under the <strong>MIT License</strong>.</p>
+    <p>You can use, copy, modify, merge, publish, distribute, sublicense, or sell copies of the Software, provided that the license and copyright notice are included in all copies or substantial portions of the Software.</p>
+    <p>The Software is provided "as is", without any warranty of any kind. For more details, please consult the <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
+    <p>For more information, contact: <a href="mailto:marcocosta@gmx.us">marcocosta@gmx.us</a></p>
 
-    <p class="text-center mt-5">© 2025 Marco Costa - Todos os direitos reservados sob a Licença MIT.</p>
+    <p class="text-center mt-5">© 2025 Marco Costa - All rights reserved under the MIT License.</p>
 </div>
 @endsection
-

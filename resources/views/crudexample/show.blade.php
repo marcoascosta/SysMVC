@@ -37,7 +37,7 @@
     </table>
     <a href="/crudexample/edit/{{ $crudexample['id'] }}" class="btn btn-warning me-2">Edit</a>
     
-    <!-- Formulário de exclusão -->
+    <!-- Delete form -->
     <form action="/crudexample/delete/{{ $crudexample['id'] }}" method="POST" style="display:inline;">
         <input type="hidden" name="_method" value="POST">
         <button type="submit" class="btn btn-danger me-2" onclick="return confirm('Are you sure?')">Delete</button>

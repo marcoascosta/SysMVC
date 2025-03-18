@@ -6,7 +6,7 @@
 <div class="container mt-5">
     <h1 class="text-danger">Blade - Crud example Delete</h1>
     <form action="/clients/delete/{{ $client['id'] }}" method="POST">
-        <input type="hidden" name="_method" value="POST"> <!-- Assegurar que está usando POST -->
+        <input type="hidden" name="_method" value="POST"> <!-- Ensure that POST is used -->
         <p class="text-warning">
             Are you sure you want to delete client {{ $client['name'] }}?
         </p>
@@ -15,6 +15,7 @@
     </form>
 </div>
 @endsection
+
 
 
 

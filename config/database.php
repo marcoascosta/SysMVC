@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 
-
 $capsule = new Capsule;
 
 $capsule->addConnection([
@@ -16,10 +15,10 @@ $capsule->addConnection([
     'prefix'    => '',
 ]);
 
-// Seta o Capsule como gerenciador global de Eloquent ORM
+// Set the Capsule as the global manager for Eloquent ORM
 $capsule->setAsGlobal();
 
-// Inicia o Eloquent ORM
+// Initialize Eloquent ORM
 $capsule->bootEloquent();
 
 

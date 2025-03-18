@@ -6,7 +6,7 @@
 <div class="container mt-5">
     <h1 class="text-success">Blade - Crud Example New Item</h1>
     
-    <!-- Exibir mensagem de erro se houver -->
+    <!-- Display error message if any -->
     @if ($error)
         <div class="alert alert-danger">
             {{ $error }}

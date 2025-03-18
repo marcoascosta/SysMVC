@@ -9,7 +9,7 @@ use Twig\Loader\FilesystemLoader;
 use Twig\TwigFunction;
 
 $containerBuilder = new ContainerBuilder();
-$containerBuilder->useAutowiring(true); // Habilitar autowiring
+$containerBuilder->useAutowiring(true); // Enable autowiring
 
 $containerBuilder->addDefinitions([
     BladeOne::class => function () {
@@ -24,7 +24,7 @@ $containerBuilder->addDefinitions([
         $loader = new FilesystemLoader(VIEWS_PATH);
         $twig = new Environment($loader);
         
-        // Registrar a função PHP getCsrfToken
+        // Register the PHP function getCsrfToken
         $csrfFunction = new TwigFunction('csrf', function () {
             return getCsrfToken();
         });
@@ -36,8 +36,9 @@ $containerBuilder->addDefinitions([
 
 $container = $containerBuilder->build();
 
-// Torne o contêiner disponível globalmente
+// Make the container globally available
 $GLOBALS['container'] = $container;
+
 
 
 

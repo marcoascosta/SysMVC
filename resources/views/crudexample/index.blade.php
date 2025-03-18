@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Crud Exemplo List')
+@section('title', 'Crud Example List')
 
 @section('content')
 <div class="container mt-5">
@@ -28,7 +28,7 @@
                             <a href="/crudexample/show/{{ $item['id'] }}" class="btn btn-info btn-sm me-2">View</a>
                             <a href="/crudexample/edit/{{ $item['id'] }}" class="btn btn-warning btn-sm me-2">Edit</a>
                             
-                            <!-- Formulário de exclusão -->
+                            <!-- Delete form -->
                             <form action="/crudexample/delete/{{ $item['id'] }}" method="POST" style="display:inline;">
                                 <input type="hidden" name="_method" value="POST">
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>

@@ -13,52 +13,52 @@ class GenerateApiKeysCommand extends Command
 
     protected function configure()
     {
-        $this->setDescription('Gera chaves de API e escreve no arquivo .env');
+        $this->setDescription('Generates API keys and writes them to the .env file');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        // Gerar chaves de API aleatórias
-        $publicKey = bin2hex(random_bytes(16));  // Gera uma chave pública aleatória
-        $secretKey = bin2hex(random_bytes(32));  // Gera uma chave secreta aleatória
+        // Generate random API keys
+        $publicKey = bin2hex(random_bytes(16));  // Generates a random public key
+        $secretKey = bin2hex(random_bytes(32));  // Generates a random secret key
 
-        // Output para o terminal
-        $output->writeln("Chave Pública: $publicKey");
-        $output->writeln("Chave Secreta: $secretKey");
+        // Output to terminal
+        $output->writeln("Public Key: $publicKey");
+        $output->writeln("Secret Key: $secretKey");
 
-        // Caminho para o arquivo .env
+        // Path to the .env file
         $envFilePath = __DIR__ . '/../../../.env';
 
-        // Verifica se o arquivo .env existe
+        // Check if the .env file exists
         if (!file_exists($envFilePath)) {
-            $output->writeln("<error>Arquivo .env não encontrado!</error>");
+            $output->writeln("<error>.env file not found!</error>");
             return Command::FAILURE;
         }
 
-        // Lê o conteúdo do arquivo .env
+        // Read the contents of the .env file
         $envFile = file_get_contents($envFilePath);
 
-        // Verifica se as chaves já existem no arquivo .env
+        // Check if the keys already exist in the .env file
         if (strpos($envFile, 'API_PUBLIC_KEY=') === false) {
-            // Adiciona a chave pública
+            // Add the public key
             $envFile .= "\nAPI_PUBLIC_KEY=$publicKey";
         } else {
-            // Substitui a chave pública existente
+            // Replace the existing public key
             $envFile = preg_replace('/^API_PUBLIC_KEY=.*$/m', "API_PUBLIC_KEY=$publicKey", $envFile);
         }
 
         if (strpos($envFile, 'API_SECRET_KEY=') === false) {
-            // Adiciona a chave secreta
+            // Add the secret key
             $envFile .= "\nAPI_SECRET_KEY=$secretKey";
         } else {
-            // Substitui a chave secreta existente
+            // Replace the existing secret key
             $envFile = preg_replace('/^API_SECRET_KEY=.*$/m', "API_SECRET_KEY=$secretKey", $envFile);
         }
 
-        // Escreve no arquivo .env
+        // Write to the .env file
         file_put_contents($envFilePath, $envFile);
 
-        $output->writeln("As chaves de API foram escritas no .env");
+        $output->writeln("API keys have been written to the .env file");
 
         return Command::SUCCESS;
     }

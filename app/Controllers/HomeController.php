@@ -21,107 +21,107 @@ class HomeController extends BaseController
 
     public function index(Request $request): string
     {
-        $data = ['title' => 'Bem-vindo ao SysMVC'];
+        $data = ['title' => 'Welcome to SysMVC'];
         return $this->blade->run('home', $data);
     }
 
     public function about(): string
     {
         try {
-            $this->logger->info('Exibindo a página Sobre.');
+            $this->logger->info('Displaying the About page.');
             return $this->blade->run('home.about');
         } catch (\Exception $e) {
-            $this->logger->error('Erro ao exibir a página Sobre: ' . $e->getMessage());
-            return 'Erro ao exibir a página Sobre: ' . $e->getMessage();
+            $this->logger->error('Error displaying the About page: ' . $e->getMessage());
+            return 'Error displaying the About page: ' . $e->getMessage();
         }
     }
 
     public function details(): string
     {
         try {
-            $this->logger->info('Exibindo a página Learn More.');
+            $this->logger->info('Displaying the Learn More page.');
             return $this->blade->run('home.details');
         } catch (\Exception $e) {
-            $this->logger->error('Erro ao exibir a página Details: ' . $e->getMessage());
-            return 'Erro ao exibir a página Learn More: ' . $e->getMessage();
+            $this->logger->error('Error displaying the Details page: ' . $e->getMessage());
+            return 'Error displaying the Learn More page: ' . $e->getMessage();
         }
     }
 
     public function readme(): string
     {
         try {
-            $this->logger->info('Exibindo a página ReadMe.');
+            $this->logger->info('Displaying the ReadMe page.');
             return $this->blade->run('home.readme');
         } catch (\Exception $e) {
-            $this->logger->error('Erro ao exibir a página ReadMe: ' . $e->getMessage());
-            return 'Erro ao exibir a página ReadMe: ' . $e->getMessage();
+            $this->logger->error('Error displaying the ReadMe page: ' . $e->getMessage());
+            return 'Error displaying the ReadMe page: ' . $e->getMessage();
         }
     }
 
     public function database(): string
     {
         try {
-            $this->logger->info('Exibindo a página Uso de Banco de Dados.');
+            $this->logger->info('Displaying the Database Usage page.');
             return $this->blade->run('home.database');
         } catch (\Exception $e) {
-            $this->logger->error('Erro ao exibir a página Uso de Banco de Dados: ' . $e->getMessage());
-            return 'Erro ao exibir a página Uso de Banco de Dados: ' . $e->getMessage();
+            $this->logger->error('Error displaying the Database Usage page: ' . $e->getMessage());
+            return 'Error displaying the Database Usage page: ' . $e->getMessage();
         }
     }
 
     public function dependencyInjection(): string
     {
         try {
-            $this->logger->info('Exibindo a página Injeção de Dependência.');
+            $this->logger->info('Displaying the Dependency Injection page.');
             return $this->blade->run('home.dependency-injection');
         } catch (\Exception $e) {
-            $this->logger->error('Erro ao exibir a página Injeção de Dependência: ' . $e->getMessage());
-            return 'Erro ao exibir a página Injeção de Dependência: ' . $e->getMessage();
+            $this->logger->error('Error displaying the Dependency Injection page: ' . $e->getMessage());
+            return 'Error displaying the Dependency Injection page: ' . $e->getMessage();
         }
     }
 
     public function appDevelopment(): string
     {
         try {
-            $this->logger->info('Exibindo a página Desenvolvimento de Apps.');
+            $this->logger->info('Displaying the App Development page.');
             return $this->blade->run('home.app-development');
         } catch (\Exception $e) {
-            $this->logger->error('Erro ao exibir a página Desenvolvimento de Apps: ' . $e->getMessage());
-            return 'Erro ao exibir a página Desenvolvimento de Apps: ' . $e->getMessage();
+            $this->logger->error('Error displaying the App Development page: ' . $e->getMessage());
+            return 'Error displaying the App Development page: ' . $e->getMessage();
         }
     }
 
-    // Novos métodos
+    // New methods
     public function templatesBlade(): string
     {
         try {
-            $this->logger->info('Exibindo a página Templates Blade.');
+            $this->logger->info('Displaying the Blade Templates page.');
             return $this->blade->run('home.templates-blade');
         } catch (\Exception $e) {
-            $this->logger->error('Erro ao exibir a página Templates Blade: ' . $e->getMessage());
-            return 'Erro ao exibir a página Templates Blade: ' . $e->getMessage();
+            $this->logger->error('Error displaying the Blade Templates page: ' . $e->getMessage());
+            return 'Error displaying the Blade Templates page: ' . $e->getMessage();
         }
     }
 
     public function security(): string
     {
         try {
-            $this->logger->info('Exibindo a página Segurança.');
+            $this->logger->info('Displaying the Security page.');
             return $this->blade->run('home.security');
         } catch (\Exception $e) {
-            $this->logger->error('Erro ao exibir a página Segurança: ' . $e->getMessage());
-            return 'Erro ao exibir a página Segurança: ' . $e->getMessage();
+            $this->logger->error('Error displaying the Security page: ' . $e->getMessage());
+            return 'Error displaying the Security page: ' . $e->getMessage();
         }
     }
 
     public function consoleCli(): string
     {
         try {
-            $this->logger->info('Exibindo a página Console CLI.');
+            $this->logger->info('Displaying the Console CLI page.');
             return $this->blade->run('home.console-cli');
         } catch (\Exception $e) {
-            $this->logger->error('Erro ao exibir a página Console CLI: ' . $e->getMessage());
-            return 'Erro ao exibir a página Console CLI: ' . $e->getMessage();
+            $this->logger->error('Error displaying the Console CLI page: ' . $e->getMessage());
+            return 'Error displaying the Console CLI page: ' . $e->getMessage();
         }
     }
 }

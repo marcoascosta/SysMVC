@@ -1,45 +1,45 @@
 <?php
 
 /**
- * Carrega variáveis de ambiente do arquivo .env e define como constantes.
+ * Loads environment variables from the .env file and defines them as constants.
  *
- * @param string $path Caminho para o arquivo .env
+ * @param string $path Path to the .env file
  */
 function loadEnvToConstants($path) {
     if (!file_exists($path)) {
-        throw new Exception("Arquivo .env não encontrado no caminho: $path");
+        throw new Exception("The .env file was not found at the path: $path");
     }
 
     $lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
     foreach ($lines as $line) {
-        // Ignorar comentários
+        // Ignore comments
         if (strpos(trim($line), '#') === 0) {
             continue;
         }
 
-        // Dividir chave e valor
+        // Split key and value
         list($name, $value) = explode('=', $line, 2);
 
-        // Remover espaços em branco
+        // Remove whitespace
         $name = trim($name);
         $value = trim($value);
 
-        // Verificar se o valor está entre aspas e removê-las
+        // Check if the value is enclosed in quotes and remove them
         if (preg_match('/^"(.*)"$/', $value, $matches)) {
             $value = $matches[1];
         } elseif (preg_match("/^'(.*)'$/", $value, $matches)) {
             $value = $matches[1];
         }
 
-        // Definir como constante
+        // Define as constant
         define($name, $value);
     }
 }
 
-// Uso da função
+// Using the function
 try {
-    loadEnvToConstants(__DIR__ . '/../.env'); // Ajuste o caminho conforme necessário
-    # echo "Variáveis de ambiente carregadas como constantes com sucesso!";
+    loadEnvToConstants(__DIR__ . '/../.env'); // Adjust the path as necessary
+    # echo "Environment variables successfully loaded as constants!";
 } catch (Exception $e) {
-    echo 'Erro: ' . $e->getMessage();
+    echo 'Error: ' . $e->getMessage();
 }
